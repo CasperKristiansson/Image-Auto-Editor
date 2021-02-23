@@ -3,6 +3,15 @@ import shutil
 import login
 import os
 
+def check_images(start_directory):
+    os.chdir('images')
+    directory = os.listdir(os.curdir)
+    os.chdir(start_directory)
+
+    if len(directory) == 0:
+        os.system('python image_creator.py')
+        os.system('python image_editor.py')
+
 def get_photo(start_directory):
     os.chdir('images')
     directory = os.listdir(os.curdir)
@@ -35,6 +44,7 @@ def delete_photo(start_directory):
 
 if __name__ == "__main__":
     START_DIRECTORY = os.getcwd()
+    check_images(START_DIRECTORY)
     IMAGE = get_photo(START_DIRECTORY)
     upload(IMAGE)
     delete_photo(START_DIRECTORY)
