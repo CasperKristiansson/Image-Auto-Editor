@@ -94,3 +94,4 @@ if __name__ == '__main__':
     LOGO = logo(START_DIRECTORY)
     QUOTE_LIST = get_list()
     add_images(BACKGROUNDS, LOGO, BACKGROUNDS_NAME, QUOTE_LIST)
+    
